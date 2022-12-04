@@ -4,10 +4,12 @@ import (
 	"strconv"
 )
 
+//IsEmpty - check is empty string
 func IsEmpty(s string) bool {
 	return len(s) == 0
 }
 
+//ToInt - cast string to int
 func ToInt(s string) int {
 	r, err := strconv.Atoi(s)
 	if err != nil {
@@ -16,10 +18,12 @@ func ToInt(s string) int {
 	return r
 }
 
+//ToString - cast int to string
 func ToString(s int) string {
 	return strconv.Itoa(s)
 }
 
+//IsNumeric - check is numeric string
 func IsNumeric(s string) bool {
 	if IsEmpty(s) {
 		return false
@@ -31,6 +35,7 @@ func IsNumeric(s string) bool {
 	return true
 }
 
+//IsAlpha - check is alpha string
 func IsAlpha(s string) bool {
 	if IsEmpty(s) {
 		return false
@@ -43,11 +48,4 @@ func IsAlpha(s string) bool {
 		}
 	}
 	return true
-}
-
-func OrElse(origin string, defaultValue string) string {
-	if IsEmpty(origin) {
-		return defaultValue
-	}
-	return origin
 }
